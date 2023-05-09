@@ -13,11 +13,12 @@ p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
 # set gravity
 p.setGravity(0,0,-9.8)
 
-# import plane
+# load URDFs: plane and robot
 planeId = p.loadURDF("plane.urdf")
+robotId = p.loadURDF("body.urdf")
 
-# loads sdf
-p.loadSDF("box.sdf")
+# load SDFs: world
+p.loadSDF("world.sdf")
 
 for n in range(1500):
     p.stepSimulation()
